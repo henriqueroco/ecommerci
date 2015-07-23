@@ -1,0 +1,67 @@
+<h1>Cadastro de Produtos e Categorias</h1>
+<div class="col-lg-12">
+	<div class="col-lg-0">
+		<a href="/admin" class="btn btn-info" target="_blank">Cadastrar</a>
+	</div>
+	</br>
+	<div class="col-lg-4">
+		<strong>Produtos</strong>
+		<table class="table table-striped">
+			<tr>
+				<td>
+					Código
+				</td>
+				<td>
+					Descrição - 
+				</td>
+				<td>
+					Valor
+				</td>
+				<td>
+					Categoria
+				</td>
+			</tr>
+			<% @products.each do |p| %>		
+				<tr>
+					<td>
+						<%= p.id %>
+					</td>
+					<td>
+						<%= p.name %>
+					</td>
+					<td>
+						<%= p.value %>
+					</td>
+					<td>
+						<%= p.category.title %>
+					</td>
+				</tr>
+			<%end%>
+		</table>
+	</div>
+	<div class="col-lg-4">
+		<strong>Categorias</strong>
+		<table class="table table-striped">
+			<tr>
+				<td>
+					Código
+				</td>
+				<td>
+					Descrição
+				</td>
+			</tr>
+			<% @categories.each do |c| %>		
+				<tr>
+					<td>
+						<%= c.id %>
+					</td>
+					<td>
+						<%= c.title %>
+					</td>
+				</tr>
+			<%end%>
+		</table>
+	</div>
+	
+	
+</div>
